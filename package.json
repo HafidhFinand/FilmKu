@@ -1,0 +1,25 @@
+{
+  "name": "filmku",
+  "version": "1.0.0",
+  "description": "Build movie list app with express and sequelize",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HafidhFinand/FilmKu.git"
+  },
+  "author": "Hafidh&Irfan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HafidhFinand/FilmKu/issues"
+  },
+  "homepage": "https://github.com/HafidhFinand/FilmKu#readme",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "pg": "^8.0.3",
+    "sequelize": "^5.21.7"
+  }
+}
