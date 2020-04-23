@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List Users</h1>
+    <a href="/users/register">Add User</a>
+    <a href="/users/login">Login</a>
+    <a href="/users/logout">Logout</a>
+    <table border>
+        <thead>
+            <tr>
+                <th>username</th>
+                <th>email</th>
+                <th>password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < user.length; i++) { %>
+                <tr>
+                    <td><%=user[i].username%></td>
+                    <td><%=user[i].email%></td>
+                    <td><%=user[i].password%></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
