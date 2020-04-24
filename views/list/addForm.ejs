@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav id="navbar">
+     <!-- Navbar -->
+     <nav id="navbar">
         <h1 class="logo">
             FilmKu
         </h1>
@@ -22,19 +22,20 @@
             <li><a href="/users/logout">Logout</a></li>
         </ul>
     </nav>
-    <h1>Login Form</h1>
-    <p><%= error ? error: ''%></p>
-    <form action="/users/login" method="POST">
-        <div>
-            <p><label for="username">username</label></p>
-            <p><input type="text" name="username"></p>
-        </div>
-        <div>
-            <p><label for="password">Password</label></p>
-            <p><input type="password" name="password"></p>
-        </div>
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
+    <h1>Add to My List</h1>
+    <form action="/filmlist/<%=id%>/<%=title%>" method="POST">
+    <p><%=title%></p>
+    <div>
+        <p><label for="status">Status</label></p>
+        <p><select name="status" >
+            <option value="">Select</option>
+            <option value="currently_watching">Currently Watching</option>
+            <option value="completed">Completed</option>
+            <option value="plantowatch">Plan to Watch</option>
+            <option value="dropped">Dropped</option>
+        </select></p>
+    </div>
+    <button type="submit">Save</button>
     </form>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+        <!-- Navbar -->
+        <nav id="navbar">
+            <h1 class="logo">
+                FilmKu
+            </h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/shows">Film</a></li>
+                <li><a href="/users/register">Register</a></li>
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+            </ul>
+        </nav>
+    <h1>List Film</h1>
+    <p><a href="/shows/add">Add Film</a></p>
+    <table border>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Released Year</th>
+                <th>Genre</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < film.length; i++) { %>
+                <tr>
+                    <td><%=film[i].title%></td>
+                    <td><%=film[i].genre%></td>
+                    <td><%=film[i].released_year%></td>
+                    <td><%=film[i].status%></td>
+                    <td>
+                        <a href="shows/<%=film[i].id%>/edit">Edit</a>
+                        |
+                        <a href="shows/<%=film[i].id%>/delete">Delete</a>
+                        | 
+                        <a href="/filmlist/<%=film[i].id%>/<%=film[i].title%>">Add to My List</a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    
+    </table>
+</body>
+</html>

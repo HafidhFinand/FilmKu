@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <% if (username) { %>
+      <!-- Navbar -->
+    <nav id="navbar">
+      <h1 class="logo">
+          FilmKu
+      </h1>
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/shows">Film</a></li>
+          <li><a href="/users/register">Register</a></li>
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+          <li><a href="/filmlist/<%=username%>">My List</a></li>
+      </ul>
+  </nav>
+   <!-- Showcase -->
+  <header id="showcase">
+    <div class="container">
+      <div class="showcase-container">
+        <div class="showcase-content">
+          <div class="category category-sports"></div>
+          <h1>Top Indonensia Film</h1>
+          <p>We are here for Indonesia Film Love. We offer you to create your won playlist and share it with you friend</p>
+          <!-- <a href="article.html" class="btn btn-primary">Read More</a> -->
+        </div>
+      </div>
+    </div>
+  </header>
+    <!-- Footer -->
+    <footer class="bg-dark text-center spasi-1">
+        <div class="containers">
+            <p>Copyright &copy; 2020, FilmKu All Rights Reservered</p>
+        </div>
+    </footer>
+    <% } else { %>
+      <!-- Navbar -->
+    <nav id="navbar">
+      <h1 class="logo">
+          FilmKu
+      </h1>
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/shows">Film</a></li>
+          <li><a href="/users/register">Register</a></li>
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+      </ul>
+  </nav>
+   <!-- Showcase -->
+  <header id="showcase">
+    <div class="container">
+      <div class="showcase-container">
+        <div class="showcase-content">
+          <div class="category category-sports"></div>
+          <h1>Top Indonensia Film</h1>
+          <p>We are here for Indonesia Film Love. We offer you to create your won playlist and share it with you friend</p>
+          <!-- <a href="article.html" class="btn btn-primary">Read More</a> -->
+        </div>
+      </div>
+    </div>
+  </header>
+    <!-- Footer -->
+    <footer class="bg-dark text-center spasi-1">
+        <div class="containers">
+            <p>Copyright &copy; 2020, FilmKu All Rights Reservered</p>
+        </div>
+    </footer>
+    <% } %>
+    
+</body>
+</html>

@@ -6,11 +6,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/style.css">
-    <title>Document</title>
+    <title></title>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav id="navbar">
+     <!-- Navbar -->
+     <nav id="navbar">
         <h1 class="logo">
             FilmKu
         </h1>
@@ -22,19 +22,26 @@
             <li><a href="/users/logout">Logout</a></li>
         </ul>
     </nav>
-    <h1>Login Form</h1>
-    <p><%= error ? error: ''%></p>
-    <form action="/users/login" method="POST">
-        <div>
-            <p><label for="username">username</label></p>
-            <p><input type="text" name="username"></p>
-        </div>
-        <div>
-            <p><label for="password">Password</label></p>
-            <p><input type="password" name="password"></p>
-        </div>
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-    </form>
+    <h1>My Film List</h1>
+    <table border>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Released Year</th>
+                <th>Genre</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < data.length; i++) { %>
+                <tr>
+                    <td><%=data[i].Film.title%></td>
+                    <td><%=data[i].Film.released_year%></td>
+                    <td><%=data[i].Film.genre%></td>
+                    <td><%=data[i].Film.status%></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 </body>
 </html>

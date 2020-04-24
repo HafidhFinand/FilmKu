@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Edit Existing Film</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <h1 class="logo">
+            FilmKu
+        </h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/shows">Film</a></li>
+            <li><a href="/users/register">Register</a></li>
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <h1>Edit Film</h1>
+    <form action="/shows/<%=film.id%>/edit" method="POST">
+        <div>
+            <p><label for="title">Title</label></p>
+            <p><input type="text" name="title" value="<%=film.title%>"></p>
+        </div>
+        <div>
+            <p><label for="released_year">Released Year</label></p>
+            <p><input type="number" value="<%=film.released_year%>" name="released_year"></p>
+        </div>
+        <div>
+            <p><label for="genre">Genre</label></p>
+            <p><select name="genre">
+                <% if (film.genre === 'action') { %>
+                    <option selected value="action">Action</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="thriller">Thriller</option>
+                <% } else if (film.genre === 'drama') { %>
+                    <option value="action">Action</option>
+                    <option selected value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="thriller">Thriller</option>
+                <% } else if (film.genre === 'comedy') { %>
+                    <option value="action">Action</option>
+                    <option value="drama">Drama</option>
+                    <option selected value="comedy">Comedy</option>
+                    <option value="thriller">Thriller</option>
+                <% } else if (film.genre === 'thriller') { %>
+                    <option value="action">Action</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option selected value="thriller">Thriller</option>
+                <% } %>
+            </select></p>
+        </div>
+        <div>
+            <p><label for="status">Status Release</label></p>
+            <p><select name="status">
+                if (film.status === 'upcoming') {
+                    <option selected value="upcoming">Upcoming</option>
+                    <option value="completed">Completed</option>
+                    <option value="ongoing">Ongoing</option>
+                } else if (film.status === 'completed') {
+                    <option value="upcoming">Upcoming</option>
+                    <option selected value="completed">Completed</option>
+                    <option value="ongoing">Ongoing</option>
+                } else if (film.status === 'ongoing') {
+                    <option value="upcoming">Upcoming</option>
+                    <option value="completed">Completed</option>
+                    <option selected value="ongoing">Ongoing</option>
+                }
+            </select></p>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

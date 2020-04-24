@@ -30,7 +30,7 @@ class UserController {
         User.create(values)
             .then(data => {
                 sendMail(email);
-                res.send('sukses')
+                res.redirect('/')
             })
             .catch(err => {
                 req.session.error = err.message
@@ -53,7 +53,8 @@ class UserController {
                 if (result) {
                     if (compare(password, result.password)) {
                         req.session.isLogin = true;
-                        res.redirect('/users')
+                        req.session.username = username;
+                        res.redirect('/')
                     } else {
                         req.session.error = 'wrong username/password';
                         res.redirect('/users/login');
