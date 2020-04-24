@@ -13,9 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     genre: DataTypes.STRING
   }, {
     sequelize,
+    hooks: {},
     validate: {
       valueNotEmpty() {
-        if (!this.title && !this.status && !this.rating && !this.released_year && !this.genre) {
+        if (!this.title || !this.status || !this.released_year || !this.genre) {
           throw new Error(`Value can't be empty`);
         }
       }
