@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Add New Film</title>
+</head>
+<body>
+                <!-- Navbar -->
+                <nav id="navbar">
+                    <h1 class="logo">
+                        FilmKu
+                    </h1>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/shows">Film</a></li>
+                        <li><a href="/users/register">Register</a></li>
+                        <li><a href="/users/login">Login</a></li>
+                        <li><a href="/users/logout">Logout</a></li>
+                    </ul>
+                </nav>
+    <h1>Add New Film</h1>
+    <form action="/shows/add" method="POST">
+        <div>
+            <p><label for="title">Title</label></p>
+            <p><input type="text" name="title" placeholder="e.g: Ant Man"></p>
+        </div>
+        <div>
+            <p><label for="released_year">Released Year</label></p>
+            <p><input type="number" placeholder="e.g: 1972" name="released_year"></p>
+        </div>
+        <div>
+            <p><label for="genre">Genre</label></p>
+            <p><select name="genre">
+                <option value="">Select</option>
+                <option value="action">Action</option>
+                <option value="drama">Drama</option>
+                <option value="comedy">Comedy</option>
+                <option value="thriller">Thriller</option>
+            </select></p>
+        </div>
+        <div>
+            <p><label for="statu">Status Release</label></p>
+            <p><select name="status">
+                <option value="select">Select</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="completed">Completed</option>
+                <option value="ongoing">Ongoing</option>
+            </select></p>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
